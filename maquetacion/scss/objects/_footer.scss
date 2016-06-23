@@ -1,0 +1,93 @@
+/*------------------------------------*\
+$FOOTER
+\*------------------------------------*/
+.footer {
+    background: $secundario;
+    padding: 25px 0;
+    z-index: -1;
+    @include respond-to(tablet) {
+        position: relative;
+        background: url(../img/footer.jpg);
+        background-size: cover;
+        padding-top: 140px;
+        height: 220px;
+    }
+    @include respond-to(desktop) {
+        height: 380px;
+        padding-top: 300px;
+        margin-top: -120px;
+    }
+    .wrap {
+        position: relative;
+    }
+    .foo--logos {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        text-align: center;
+        @include respond-to(tablet) {
+            text-align: left;
+            justify-content: center;
+        }
+        @include respond-to(desktop) {
+            justify-content: flex-end;
+        }
+        p {
+            width: 100%;
+            margin-bottom: 25px;
+            @include font-size(15px, 18px);
+            text-transform: uppercase;
+            color: white;
+            @extend .domine;
+            @include respond-to(tablet) {
+                color: $secundario;
+                width: 155px;
+                line-height: cr(50px);
+                margin-bottom: 0;
+                margin-right: 15px;
+            }
+        }
+        a {
+            width: 50%;
+            padding: 5px;
+            min-height: 70px;
+            @include respond-to(tablet) {
+                width: 115px;
+                height: 50px;
+                min-height: auto;
+                border-right: 1px solid $secundario;
+                padding-right: 10px;
+                margin-right: 10px;
+                &:last-child {
+                    border-right: none;
+                }
+            }
+        }
+    }
+    .foo--mail {
+        width: 100%;
+        border-top: 1px solid rgba(white, .5);
+        text-transform: uppercase;
+        @include font-size(13px, 15.6px);
+        color: white;
+        text-align: center;
+        padding-top: 25px;
+        @extend .domine;
+        @include respond-to(tablet) {
+            @include font-size(15px, 18px);
+            border-top: none;
+            position: absolute;
+            top: -50px;
+            left: 0;
+            padding-top: 0;
+            color: $principal;
+        }
+        @include respond-to(desktop) {
+            text-align: left;
+            top: 0;
+            left: 13px;
+            line-height: cr(50px);
+            width: 270px;
+        }
+    }
+}

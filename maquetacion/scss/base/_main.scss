@@ -1,0 +1,166 @@
+/*------------------------------------*\
+$MAIN
+\*------------------------------------*/
+html, body {
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    color: $principal;
+}
+.domine {
+    font-family: 'Domine', serif;
+    font-weight: 700;
+}
+.sourcesans {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.no-mobile {
+    display: none;
+    @include respond-to(tablet) {
+        display: block;
+    }
+}
+.only-mobile {
+    display: block;
+    @include respond-to(tablet) {
+        display: none !important;
+    }
+}
+.no-touch {
+    a {
+        &:hover {
+            color: darken($secundario, 10);
+        }
+    }
+    .content {
+        a {
+            &:hover {
+                color: white;
+                background: $secundario;
+            }
+        }
+    }
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Domine', serif;
+    font-weight: 700;
+    display: block;
+    width: 100%;
+}
+.headline {
+    @include font-size(22px, 26.4px);
+    position: relative;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    @include respond-to(tablet) {
+        @include font-size(28px, 33.6px);
+    }
+    &.bigger {
+        @include less-than(tablet) {
+            @include font-size(26px, 26.4px);
+        }
+    }
+    &::after {
+        content: '';
+        width: 100px;
+        height: 2px;
+        background: $secundario;
+        display: block;
+        margin: 5px auto;
+        margin-bottom: 55px;
+    }
+}
+.headline--single {
+    @include font-size(20px, 24px);
+    @include respond-to(tablet) {
+        @include font-size(40px, 48px);
+    }
+    span {
+        @include font-size(30px, 26px);
+        @include respond-to(tablet) {
+            @include font-size(40px, 48px);
+        }
+    }
+}
+.sub-title {
+    @include font-size(24px, 26px);
+    color: $secundario;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+}
+p {
+    @include font-size(14px, 26px);
+}
+a {
+    transition: all 300ms;
+    color: $secundario;
+    display: inline-block;
+    font-weight: bold;
+}
+img {
+    max-width: 100%;
+}
+ul, ol {
+    padding-left: 15px;
+    list-style: square;
+    margin-bottom: 15px;
+    display: block;
+    ul {
+        list-style: circle;
+        margin-bottom: 0;
+    }
+    ol {
+        list-style: upper-roman;
+        margin-bottom: 0;
+    }
+}
+ol {
+    list-style: decimal;
+}
+svg {
+    transition: all 300ms;
+}
+hr {
+    margin: 15px 0;
+    &.dotted {
+        width: 100%;
+        height: 1px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px dashed rgba($gray, .5);
+    }
+}
+blockquote {
+    width: 100%;
+    padding: 70px 0 60px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    p {
+        font-size: cr(18px) !important;
+        line-height: cr(27px) !important;
+        @extend .domine;
+        color: #969696;
+    }
+    &:after {
+        content: '';
+        height: 22px;
+        width: 78px;
+        background: url(../img/quote.svg) center no-repeat white;
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    &:before {
+        content: '';
+        height: 1px;
+        width: 440px;
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        background: rgba($secundario, .4);
+    }
+}

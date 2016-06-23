@@ -1,0 +1,382 @@
+/*------------------------------------*\
+$SINGLE
+\*------------------------------------*/
+.single {
+    @each $type, $color in $types {
+        &.#{$type} {
+            .content__single {
+                .content__single--top {
+                    .single__category {
+                        background: $color;
+                    }
+                }
+                .single__title {
+                    color: $color;
+                }
+            }
+        }
+    }
+    .js-load {
+        cursor: pointer;
+        @include respond-to(desktop) {
+            display: none;
+        }
+    }
+}
+.content__single {
+    width: 100%;
+    @include respond-to(desktop) {
+        width: calc(100% - 360px);
+        padding-right: 40px;
+    }
+    p {
+        @include font-size(15px, 24px);
+    }
+    .content__single--top {
+        width: 100%;
+        position: relative;
+        margin-bottom: 30px;
+        .content__image {
+            overflow: hidden;
+        }
+        img {
+            width: 100%;
+        }
+        .single__category {
+            position: absolute;
+            height: 36px;
+            bottom: -18px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            @include font-size(14px, 36px);
+            background: $gray;
+            color: white;
+            padding: 0 15px;
+            min-width: 170px;
+            text-align: center;
+            @include respond-to(tablet) {
+                bottom: 22px;
+                z-index: $level1;
+            }
+        }
+    }
+    .content__white {
+        @include respond-to(tablet) {
+            background: white;
+            max-width: 90%;
+            margin: auto;
+            display: block;
+            position: relative;
+            top: -70px;
+            padding-top: 40px;
+        }
+    }
+    .single__title {
+        @include font-size(20px, 24px);
+        text-align: center;
+        margin-bottom: 20px;
+        @include respond-to(tablet) {
+            @include font-size(40px, 48px);
+        }
+        span {
+            @include font-size(30px, 26px);
+            display: block;
+            clear: both;
+            @include respond-to(tablet) {
+                @include font-size(40px, 48px);
+                display: inline-block;
+                clear: none;
+            }
+        }
+    }
+    .sub-title {
+        margin-bottom: 15px;
+        @include respond-to(tablet) {
+            @include font-size(28px, 26px);
+        }
+    }
+    .content--post {
+        margin-bottom: 40px;
+    }
+    .tips {
+        padding: 20px 0;
+        margin: 20px 0;
+        display: flex;
+        flex-flow: row wrap;
+        display: none;
+        opacity: 0;
+        &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+            display: flex;
+            opacity: 1;
+        }
+        &:nth-child(4) {
+            @include respond-to(tablet) {
+                display: flex;
+                opacity: 1;
+            }
+        }
+        @include respond-to(desktop) {
+            display: flex;
+            opacity: 1;
+        }
+        &.destacado-1 {
+            background: #fffdf0;
+            width: calc(100% + 26px);
+            margin-left: -13px;
+            padding: 20px 13px;
+            .tips__number {
+                color: $principal;
+            }
+            .tips__content {
+                p {
+                    @include font-size(18px, 30px);
+                    @extend .domine;
+                    &.tips__title {
+                        @include font-size(14px, 26px);
+                        font-family: 'Open Sans', sans-serif;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+        &.destacado-2 {
+            background: rgba(#2899d5, .1);
+            width: calc(100% + 26px);
+            margin-left: -13px;
+            padding: 20px 13px;
+            .tips__number {
+                color: $principal;
+            }
+            .tips__content {
+                p {
+                    @include font-size(16px, 30px);
+                    @extend .domine;
+                    &.tips__title {
+                        @include font-size(14px, 26px);
+                        font-family: 'Open Sans', sans-serif;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+        .tips__number {
+            @include font-size(50px, 60px);
+            color: $secundario;
+            @extend .domine;
+            width: 70px;
+            text-align: right;
+            padding-right: 10px;
+        }
+        .tips__content {
+            width: calc(100% - 70px);
+            p {
+                @include font-size(15px, 26px);
+                &.tips__title {
+                    @include font-size(14px, 26px);
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+.related {
+    @include respond-to(tablet) {
+        border-top: 1px dashed rgba($gray, .5);
+        padding-top: 30px;
+    }
+    .sub-title {
+        text-align: center;
+        color: #000;
+        @include font-size(23px, 27.6px);
+        width: 200px;
+        margin: 0 auto 40px;
+    }
+}
+.no-touch {
+    .share {
+        .btn {
+            &:hover {
+                @each $red, $color in $redes {
+                    &.#{$red} {
+                        background: $color;
+                        svg {
+                            fill: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.share {
+    justify-content: center;
+    border-top: 1px dashed rgba($gray, .5);
+    border-bottom: 1px dashed rgba($gray, .5);
+    padding: 8px 0;
+    margin: 10px 0 30px;
+    @include respond-to(tablet) {
+        padding: 8px 0;
+    }
+    p {
+        line-height: cr(32px);
+    }
+    .btn {
+        border-radius: 50%;
+        @each $red, $color in $redes {
+            &.#{$red} {
+                svg {
+                    fill: $color;
+                }
+            }
+        }
+    }
+}
+.sidebar {
+    width: 100%;
+    @include respond-to(tablet) {
+        margin-top: 70px;
+    }
+    @include respond-to(desktop) {
+        width: 360px;
+        margin-top: 0;
+    }
+    .sidebar__book {
+        display: none;
+        @include respond-to(tablet) {
+            width: 50%;
+            display: flex;
+            flex-flow: row wrap;
+            margin-top: 30px;
+        }
+        @include respond-to(desktop) {
+            width: 100%;
+            border-top: 1px dashed rgba($gray, .5);
+            border-bottom: 1px dashed rgba($gray, .5);
+            padding: 10px 0 15px;
+        }
+        .sub-title {
+            @include respond-to(tablet) {
+                border-bottom: 1px dashed rgba($gray, .5);
+                padding-bottom: 5px;
+                margin-bottom: 35px;
+                margin-top: 10px;
+            }
+            @include respond-to(desktop) {
+                border-bottom: none;
+            }
+        }
+        .sidebar__book__image {
+            width: 40%;    
+        }
+        .sidebar__book__content {
+            width: 60%;
+            padding-top: 40px;
+            padding-left: 15px;
+            .btn--clear {
+                text-align: left;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .aporta {
+        position: relative;
+        margin: 60px 0;
+        @include respond-to(tablet) {
+            width: calc(50% - 40px);
+            margin: 0;
+            margin-left: 40px;
+            position: relative;
+            top: 70px;
+            &::after, &::before {
+                display: none;
+            }
+        }
+        @include respond-to(desktop) {
+            height: 172px;
+            width: 100%;
+            overflow: hidden;
+            margin: 0;
+        }
+        img {
+            @include respond-to(desktop) {
+                width: 236px;
+                height: 320px;
+                bottom: -140px;
+                right: -20px;
+            }
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: -35px;
+            border-top: 1px dashed rgba($gray, .5);
+            width: 100%;
+            height: 1px;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -35px;
+            border-bottom: 1px dashed rgba($gray, .5);
+            width: 100%;
+            height: 1px;
+        }
+    }
+}
+.no-touch {
+    .sidebar__category {
+        .btn--border-fill {
+            border: 1px solid $principal;
+            @each $type, $color in $types {
+                &.#{$type} {
+                    &:hover {
+                        border-color: $color;
+                    }
+                }
+            }
+        }
+    }
+}
+.sidebar__category {
+    .btn--border-fill {
+        border: 1px solid $principal;
+        @each $type, $color in $types {
+            &.#{$type} {
+                &.active {
+                    border-color: $color;
+                    color: $color;
+                }
+            }
+        }
+    }
+}
+.item__date--single {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    transition: all 300ms;
+    margin-bottom: 20px;
+    text-align: left;
+    @include respond-to(tablet) {
+        text-align: center;
+    } 
+    .item__date--data {
+        @include font-size(12px, 14px);
+        margin-bottom: 6px;
+        width: 100%;
+        color: $secundario;
+        @include respond-to(tablet) {
+            width: 25%;
+        }
+        span {
+            @include font-size(14px, 18px);
+            font-weight: bold;
+            display: block;
+            margin-top: 2px;
+            color: $principal;
+        }
+    }
+}

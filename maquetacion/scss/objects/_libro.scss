@@ -1,0 +1,78 @@
+/*------------------------------------*\
+$LIBRO
+\*------------------------------------*/
+.libro {
+    .content {
+        p {
+            &:first-child {
+                @include font-size(16px, 26px);
+            }
+        }
+    }
+}
+.flex--center {
+    justify-content: space-between;
+    @include respond-to(tablet) {
+        justify-content: flex-start;
+    }
+    .btn {
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        @include respond-to(tablet) {
+            margin-right: 20px;
+        }
+    }
+}
+.book__image {
+    height: 190px;
+    width: 100%;
+    margin-bottom: 15px;
+    @include respond-to(tablet) {
+        width: 200px;
+        height: auto;
+    }
+    @include respond-to(desktop) {
+        width: 300px;
+    }
+    img {
+        height: 100%;
+        margin: auto;
+        display: block;
+        @include respond-to(tablet) {
+            width: 100%;
+            height: auto;
+        }
+    }
+}    
+.book__content {
+    @include respond-to(tablet) {
+        width: calc(100% - 200px);
+        padding-left: 30px;
+    }
+    @include respond-to(desktop) {
+        width: calc(100% - 400px);
+    }
+    p {
+        margin-bottom: 15px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .content {
+        margin-bottom: 30px;
+    }
+    .share {
+        p {
+            margin-bottom: 0;
+            @include respond-to(tablet) {
+                margin-right: 15px;
+            }
+        }
+        @include respond-to(tablet) {
+            justify-content: flex-start;
+        }
+        @include respond-to(desktop) {
+            max-width: 460px;
+        }
+    }
+}

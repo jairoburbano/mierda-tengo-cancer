@@ -1,0 +1,77 @@
+/*------------------------------------*\
+$TESTIMONIO
+\*------------------------------------*/
+.libro {
+    .sub-title {
+        margin-bottom: 15px;
+        &.mbig {
+            margin: 60px 0 40px;
+        }
+    }
+    .content--testimonio {
+        width: 100%;
+        @include respond-to(desktop) {
+            width: calc(100% - 360px);
+            padding-right: 60px;
+        } 
+    }
+    .sidebar--testimonio {
+        display: none;
+        width: 360px;
+        @include respond-to(desktop) {
+            display: block;
+        }
+        .sub-title {
+            border-bottom: 1px dashed rgba($gray, .5);
+            padding-bottom: 15px;
+        }
+    }
+}
+.content--groups {
+    width: 100%;
+}
+.tips__group {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    &:last-child {
+        .tips__content {
+            @include respond-to(tablet) {
+                border-bottom: none;
+            }    
+        }
+    }
+    .tips__number {
+        width: 100%;
+        @include font-size(50px, 60px);
+        color: $secundario;
+        @include respond-to(tablet) {
+            width: 80px;
+            text-align: right;
+            padding-right: 20px;
+        }
+    }    
+    .tips__content {
+        width: 100%;
+        padding-bottom: 20px;
+        border-bottom: 1px dashed rgba($gray, .5);
+        margin-bottom: 20px;
+        @include respond-to(tablet) {
+            width: calc(100% - 80px);
+        }
+    }
+}
+.more-tips {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed rgba($gray, .5);
+    .btn {
+        cursor: pointer;
+        border: 2px solid $gray;
+        line-height: cr(44px);
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}

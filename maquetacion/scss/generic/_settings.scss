@@ -1,0 +1,41 @@
+/*------------------------------------*\
+$SETTINGS
+\*------------------------------------*/
+
+/* ============== // Transition // ============== */
+
+$transition-time: .3s;
+$transition-method: ease-in-out;
+
+
+/* ============== // FONTS // ============== */
+$principal : #686868;
+$gray : #969696;
+$secundario: #4cc3c7; 
+$types: (
+    melanoma: #b41e8e,/*Melanoma*/
+    cancer-de-piel: #b41e8e,/*Cancer de piel*/
+    cancer-de-mama: #f79433,/*Cancer de mama*/
+    linfoma-no-hodgkin: #2899d5,/*Linfoma de no Hodgkin*/
+    linfoma-de-hodgkin: #f0532d,/*Linfoma de Hodgkin*/
+    leucemia: #1269a2,/*Leucemia*/
+    tumor-cerebral: #ad680e,/*Tumor cerebral*/
+    neuroblastoma: #ef4277,/*Neuroblastoma*/
+    cancer-de-ovario: #00b7a3,/*Cancer de ovario*/
+    cancer-de-tiroides: #e0c300,/*Cancer de tiroides*/
+    cancer-de-pancreas: #d06dab,/*Cancer de pancreas*/
+    cancer-cervico-uterino: #56b7dc,/*Cancer cervico uterino*/
+    osteosarcoma: #00867d,/*Osteosarcoma*/
+    cancer-de-colon: #4b5b98,/*Cancer de colon*/
+    cancer-al-pulmon: #d7182a,/*Cancer al pulmon*/
+    cancer-de-testiculo: #aab43a,/*Cancer de testiculos*/
+    sarcoma-de-ewing: #f59494,/*Sarcoma de Ewing*/
+    cancer-de-prostata: #988e8c,/*Cancer de prostata*/
+    cancer-de-celulas-claras: #98694c/*Cancer celulas claras*/
+);
+$redes: (
+    redes-1 : #45b6f4,
+    redes-2 : #3056b5,
+    redes-3 : #9e7625,
+    redes-4 : #000
+);

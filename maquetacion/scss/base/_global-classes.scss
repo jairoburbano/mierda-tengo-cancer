@@ -1,0 +1,15 @@
+.wrap {
+	margin: auto;
+	max-width: cr(1200px);
+    padding: 0 13px;
+    @include respond-to(tablet) {
+        padding: 0 30px;
+    }
+    &.inside {
+        padding-top: 50px;
+        min-height: calc(100% - 260px);
+        @include respond-to(tablet) {
+            padding-top: 70px;
+        }
+    }
+}
